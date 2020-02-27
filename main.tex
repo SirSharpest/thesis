@@ -1,0 +1,215 @@
+% Created 2019-04-19 Fri 18:56
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{minted}
+\renewcommand\maketitle{}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{amssymb,amsmath}
+\usepackage{fancyhdr} %For headers and footers
+\pagestyle{fancy} %For headers and footers
+\fancyhead{}
+\fancyhead[LE, RO]{\rightmark}
+\fancyhead[RE, LO]{\thepage}
+\fancyfoot{}
+\usepackage{lastpage} %For getting page x of y
+\usepackage{float} %Allows the figures to be positioned and formatted nicely
+\restylefloat{figure} %and this command
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+\usepackage{minted}
+\setminted{frame=single,framesep=10pt}
+\usepackage[parfill]{parskip}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{subfig}
+\usepackage[subfigure]{tocloft}
+\newcolumntype{C}{ >{\centering\arraybackslash} m{10.4cm} }
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{pdfpages}
+\usepackage[nocompress]{cite}
+\usepackage{titling}
+\usepackage{lipsum}
+\usepackage[super]{nth}
+\usepackage[numbers, sort&compress]{natbib}
+\usepackage[font={small}, labelfont=bf]{caption}
+\renewcommand{\bibname}{References}
+\usepackage{framed}
+\usepackage{aliascnt}
+\usepackage{etoolbox}
+\usepackage{aliascnt}
+\usepackage{notoccite}
+\usepackage{mathtools, cases}
+\usepackage{subfiles}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black, citecolor=black}
+\date{}
+\title{\textbf{Computational modeling of information transfer between cells}}
+\hypersetup{
+ pdfauthor={Nathan Hughes},
+ pdftitle={\textbf{Computational modeling of information transfer between cells}},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.1 (Org mode 9.1.9)},
+ pdflang={English}}
+
+
+
+\begin{document}
+
+\newaliascnt{eqfloat}{equation}
+\newfloat{eqfloat}{h}{eqflts}
+\floatname{eqfloat}{Equation}
+
+\newcommand*{\ORGeqfloat}{}
+\let\ORGeqfloat\eqfloat
+\def\eqfloat{%
+  \let\ORIGINALcaption\caption
+  \def\caption{%
+    \addtocounter{equation}{-1}%
+    \ORIGINALcaption
+  }%
+  \ORGeqfloat
+}
+
+\newcommand{\zebra}[3]{%
+    {\realnumberstyle{#3}}%
+    \begingroup
+    \lst@basicstyle
+    \ifodd\value{lstnumber}%
+        \color{#1}%
+    \else
+        \color{#2}%
+    \fi
+        \rlap{\hspace*{\lst@numbersep}%
+        \color@block{\linewidth}{\ht\strutbox}{\dp\strutbox}%
+        }%
+    \endgroup
+}
+
+\newcommand{\listequationsname}{List of Equations}
+\newlistof{myequations}{equ}{\listequationsname}
+\newcommand{\myequations}[1]{%
+\addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
+\setlength{\cftmyequationsnumwidth}{2.5em}% Width of equation number in List of Equations
+
+\hyphenpenalty=10000
+
+
+
+\titleformat{\chapter}[display]
+   {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{10pt}{10pt}{10pt}
+
+
+\thispagestyle{empty}
+\renewcommand{\headrulewidth}{0pt}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+
+        \Huge
+        \textbf{Coordinated defence through distributed computing in plants}
+
+        \vspace{0.5cm}
+        \Large
+
+        A report presented as part of the\\PhD year 2 review, May 2020
+
+        \vspace{1.5cm}
+
+        \textbf{Nathan Hughes}
+
+        \vfill
+
+        \vspace{0.8cm}
+
+        \Large
+        Computational Systems Biology\\
+        John Innes Centre, Norwich
+
+    \end{center}
+
+\end{titlepage}
+
+\thispagestyle{empty}
+\begin{abstract}
+
+  For plants, efficient cell to cell communication is vital as unlike animals
+  they lack a centralised information processing system. Additionally, typical
+  plant cells are non-mobile and are encased in a cell wall. Therefore cells
+  must have mechanisms for distributing information to relevant destinations
+  that can move through the cell wall barrier. Symplastic channels known as
+  plasmodesmata facilitate this intercellular pathway. Plasmodesmata, more than
+  being simple passive channels have the ability to alter their aperture and so
+  influence the degree of molecular traffic between cells. These alterations in
+  intercellular flux are known to be used by plants to coordinate development,
+  as well as to react to both biotic and abiotic stresses. Thus, it is essential
+  that we enhance our mechanistic understanding of signalling between cells if
+  we want to better understand how plants adapt to change. This project focuses
+  on the specific mechanisms plants employ in response to pathogen attack.
+  Through mathematical and computational simulations we seek to unravel the role
+  of plasmodesmata in altering defence signals and how encoded signals can
+  subsequently be altered to have different effects throughout defence.
+
+
+\end{abstract}
+
+
+\clearpage
+\renewcommand{\headrulewidth}{1pt}
+
+\clearpage
+
+\clearpage
+\tableofcontents
+\thispagestyle{plain}          
+\clearpage
+\listoffigures
+\clearpage
+\listofmyequations
+\clearpage
+\listoftables
+\clearpage
+
+
+\subfile{./chapters/introduction.tex}
+\subfile{./chapters/diffusion.tex}
+\subfile{./chapters/networking.tex}
+\subfile{./chapters/narrowescape.tex}
+\subfile{./chapters/rnaseq.tex}
+\subfile{./chapters/gendisscusion.tex}
+
+% \subfile{./chapters/projectaims.tex} % Removing aims, as each chapter should
+% address this 
+
+\clearpage
+\renewcommand{\bibname}{Bibliography}
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{library}
+\bibliographystyle{unsrtnat}
+\end{document}
+
+
+\end{document}
+
+
+%%% Local Variables:
+%%% TeX-command-extra-options: "-shell-escape"
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
