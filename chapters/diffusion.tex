@@ -10,7 +10,7 @@
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=\columnwidth]{figures/compare_equations.png}
+  \includegraphics[width=0.5\columnwidth]{figures/compare_equations.png}
   \caption{\label{fig:analyticalsolutions} Verification}
 \end{figure}
 
@@ -44,11 +44,26 @@
 \subsection{Changes to cell wall permeability explain flux reduction between cells}
 \label{sec:cellwallperm}
 
-\begin{figure}[ht]
+
+\begin{figure}[!ht]
   \centering
-  \includegraphics[width=\columnwidth]{figures/Waterfall.png}
-  \caption{\label{fig:waterfall} Waterfall}
-\end{figure}
+     \subfloat[First sub-figure\label{subfig-1:waterfall}]{%
+       \includegraphics[width=\columnwidth]{./figures/wf1.png}
+     }
+     \\
+     \subfloat[First sub-figure\label{subfig-2:waterfall}]{%
+       \includegraphics[width=\columnwidth]{./figures/wf2.png}
+     }
+     \\
+     \subfloat[First sub-figure\label{subfig-3:waterfall}]{%
+       \includegraphics[width=\columnwidth]{./figures/wf3.png}
+     }
+    
+     \caption{Waterfall}
+     \label{fig:waterfall}
+   \end{figure}
+
+
 
 
 \section{Conclusions}
