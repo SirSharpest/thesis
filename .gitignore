@@ -85,7 +85,7 @@ flycheck_*.el
 *.webp
 
 # Portable Network Graphics
-*.png
+# *.png I use png
 
 # Animated Portable Network Graphics
 *.apng
