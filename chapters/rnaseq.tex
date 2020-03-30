@@ -92,7 +92,7 @@ than the control.
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.8\columnwidth]{figures/vennTreatmentschitin.png}
-  \caption{\label{fig:05hrDEGs} Venn diagram of differential genes for Col-0,
+  \caption[Venn diagram of differential genes 30 minutes post-chitin treatment]{\label{fig:05hrDEGs} Venn diagram of differential genes for Col-0,
     \textit{cerk2-1} and \textit{lym2-1} 30 minutes after exposed to chitin}
 \end{figure}
 
@@ -103,7 +103,7 @@ profile is seen in up-regulated genes for both Col-0 and \textit{lym2-1} , while
 \textit{cerk2-1} doesn't show any genes that would be classified as having a
 substantially different expression compared with the water control (DEGs with
 greater than 2 LFC, three genes found in \textit{cerk2-1} have a small degree of
-regulation) (figure: \ref{DEG5}). In genes down-regulated at 30
+regulation) (figure: \ref{fig:DEG5}). In genes down-regulated at 30
 minutes post-treatment, \textit{lym2-1} and Col-0 have a slight difference.
 Overall at this time point \textit{lym2-1} shows a much higher degree of
 mis-regulation (figure: \ref{fig:05hrDEGs}). This behaviour may suggest that
@@ -120,7 +120,7 @@ correctly contain and regulate gene expression.
   \subfloat[Most down-regulated genes at 30 minutes post-treatment of chitin\label{subfig-1:deg5}]{%
     \includegraphics[width=1\columnwidth]{./figures/chitin_water_05hr_down.png}
   }
-  \caption{5 most up and down regulated genes at 30 minutes post chitin
+  \caption[Most differential genes at 30 minutes post-chitin treatment]{5 most up and down regulated genes at 30 minutes post chitin
     treatment for each genotype. Columns show each genotype tested, colour intensity represents LFC}
   \label{fig:DEG5}
 \end{figure}
@@ -163,7 +163,7 @@ cell-cell communication of stress (Figures \ref{subfig-2:cerk} and
     \includegraphics[width=0.45\columnwidth]{./figures/cerk_genes_AT3G60690.png}
   }
   
-  \caption{Genes which were found to have a differential regulation in the
+  \caption[Differential \textit{cerk1-2} genes at 30 minutes post-chitin treatment]{Genes which were found to have a differential regulation in the
     \textit{cerk1-2} genotype. Presented for comparison are the values in both
     Col-0 and \textit{lym2-1}, Y values are given as normalised transcript counts
     for each transcript across different treatments (Normalisation was performed
@@ -207,7 +207,8 @@ are similar and that repeated experiments could give contradictory results
 \begin{figure}[ht]
   \centering
   \includegraphics[width=\columnwidth]{figures/05hrGO.png}
-  \caption{\label{fig:05hrGO} GO terms found in Col-0 and \textit{lym2-1} at 30
+  \caption[GO terms found in Col-0 and \textit{lym2-1} at 30
+    minutes post chitin treatment]{\label{fig:05hrGO} GO terms found in Col-0 and \textit{lym2-1} at 30
     minutes post chitin treatment. Up-regulated terms are given as blue and down
   in red. Down-regulated terms are shown as negative values to indicate that the
   respective term has genes which are down-regulated}
@@ -233,7 +234,8 @@ previous, 30 minute time-point and here gives just 366 DEGs.
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.8\columnwidth]{figures/vennTreatmentschitin6.png}
-  \caption{\label{fig:6hrDEGs} DEGs for 6hr}
+  \caption{\label{fig:6hrDEGs} Differentially expressed genes Venn diagram at 30
+  minutes post-chitin treatment}
 \end{figure}
 
 Unsurprisingly, \textit{cerk1-2} displays an almost complete disregard for
@@ -281,7 +283,7 @@ after chitin application (figure: \ref{fig:tmpHist})
   \subfloat[6 hours post chitin application\label{subfig-2:tmpHist}]{%
     \includegraphics[width=0.6\columnwidth]{./figures/hist_6hr.png}
   }
-  \caption{Temporal histograms. In red Col-0 DEGs are shown, \textit{lym2-1} in
+  \caption[Temporal histograms of RNAseq data]{Temporal histograms. In red Col-0 DEGs are shown, \textit{lym2-1} in
     blue. Positive values show up-regulation and negative down in response to
     chitin treatments}
   \label{fig:tmpHist}
@@ -294,9 +296,9 @@ As previously shown by \citet{Faulkner2013}, LYM2 is required for a
 plasmodesmatal response to chitin and that CERK1 is not entirely necessary. The
 results presented by these transcriptional data would initially cause confusion
 on the \textit{lym2-1} response compared to \textit{cerk1-2}. However, as we
-show that \textit{lym2-1}'s response quickly erodes (figure: \ref{fig:tmpHist}),
-we could conclude that LYM2 is not required for chitin perception, just for a
-plasmodesmatal defence response.
+show that \textit{lym2-1}'s response quickly fades (figure: \ref{fig:tmpHist}),
+we could conclude that LYM2 is not required for chitin perception, but it is
+explicitly required for a plasmodesmatal defence response.
 
 \clearpage
 
@@ -328,7 +330,7 @@ selected using this method from Col-0 and another from \textit{lym2-1}.
   \subfloat[Genes found when selecting for opposite expression patterns\label{subfig-2:diverg}]{%
     \includegraphics[width=0.5\columnwidth]{./figures/divergingGenes.png}
   }
-  \caption{DEGs plotted by time after chitin application. X axis gives
+  \caption[Differential genes plotted by expression at two time points]{DEGs plotted by time after chitin application. X axis gives
     expression at 30 minutes, Y 6 hours. Colour shows genotype, Col-0 is shown
     in red and \textit{lym2-1} in blue}
   \label{fig:diverg}
@@ -352,7 +354,7 @@ it appears as \textit{cerk2-1} maintains directional change as Col-0 and
   \subfloat[AT5G52710 (Copper transport associated gene) \label{subfig-1:interest}]{%
     \includegraphics[width=0.7\columnwidth]{./figures/interestingGenes_AT5G52710.png}
   }
-  \caption{Genes which have conflicting directions of regulation across time.
+  \caption[Genes which have conflicting directions of regulation across time]{Genes which have conflicting directions of regulation across time.
     Coloured lines represent genotype, time-point on X axis, normalised
     expression count given on Y. Left plot shows expression of water control
     plants, right plot after chitin application}
