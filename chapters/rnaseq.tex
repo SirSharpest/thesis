@@ -9,16 +9,16 @@
 It is well established that plasmodesmata react and respond to microbe presence
 through the recognition of highly-conserved microbe associated molecular
 patterns (MAMPs) by pattern recognition receptors (PRRs)
-\cite{zipfelPlantPatternrecognitionReceptors2014a,
-  chevalPlasmodesmalRegulationPlant2018}. For fungal pathogens the receptor-like
+\cite{chevalPlasmodesmalRegulationPlant2018,
+  zipfelPlantPatternrecognitionReceptors2014,
+  lunaCalloseDepositionMultifaceted2010}. For fungal pathogens the receptor-like
 kinase CHITIN ELCITOR RECEPTOR KINASE 1 (CERK1) perceives apoplastic chitin and
-triggers defence \cite{miyaCERK1LysMReceptor2007}.
-However, it has been show that CERK1 is not a requirement for plasmodesmatal
-closure in response to chitin. Whereas LYSIN MOTIF
-DOMAIN-CONTAINING GLYCOSYLPHOSPHATIDYLINOSITOL-ANCHORED PROTEIN 2 (LYM2), a
-plasmodesmata localised receptor-like protein, is
-essential for a plasmodesmatal response to chitin \cite{Faulkner2013}
-(figure: \ref{fig:receptors}).
+triggers defence \cite{miyaCERK1LysMReceptor2007}. However, it has been show
+that CERK1 is not a requirement for plasmodesmatal closure in response to
+chitin. Whereas LYSIN MOTIF DOMAIN-CONTAINING
+GLYCOSYLPHOSPHATIDYLINOSITOL-ANCHORED PROTEIN 2 (LYM2), a plasmodesmata
+localised receptor-like protein, is essential for a plasmodesmatal response to
+chitin \cite{Faulkner2013} (figure: \ref{fig:receptors}).
 
 
 As hypothesised by \citet{Faulkner2013} there seems to exist at least two
@@ -169,7 +169,7 @@ gain insight to how they are active in spite of CERK1's absence.
 
 The sole down-regulated gene exclusively found in \textit{cerk1-2}, AT5G24530
 (DMR6) has previously been described as enhancing susceptibility to downy mildew
-\cite{DOWNYMILDEWRESISTANT}, these data could suggest that a secondary fallback
+\cite{zeilmakerDOWNYMILDEWRESISTANT2015}, these data could suggest that a secondary fallback
 mechanism is activated only when CERK1 is not present (figure:
 \ref{subfig-1:cerk}).
 
@@ -305,31 +305,36 @@ seen in water treatment controls) may explain some of these lack of differences
 
 \section{Discussion}
 
-The importance of plasmodesmata in both initial localised responses to pathogens
-\cite{chevalChitinPerceptionPlasmodesmata2019} and in later whole-plant
-responses (systemic acquired resistance (SAR))
-\cite{chevalPlasmodesmalRegulationPlant2018} cannot be understated. It is
-therefore crucial that we understand and dissect the processes that lead to
-these responses. In this study we have been able to elude to behavioural
-dynamics of two key proteins in chitin defence. We have confirmed that, as
-previously thought, CERK1 is not required for chitin perception and that it is
-also not required for a transcriptional response. From this understanding we can
-suggest that Protein DOWNY MILDEW RESISTANCE 6 (DMR6) has an important role in
-the reduction of symplastic connectivity when CERK1 is absent.
+Plasmodesmata channels are not only important for molecular flux between cells,
+but also act as signalling hubs that integrate multiple pathways in order to
+coordinate both development and defence
+\cite{tilsnerStayingTightPlasmodesmal2016a}. This is done through modulation and
+control over their aperture which in-turn alters the size of molecule which can pass
+through the plasmodesmata channel, also called the size exclusion limit (SEL).
+Effective control over the SEL has been shown to be important in limiting
+disease spread from cell-to-cell, and as such pathogens have evolved strategies to undermine this
+control \cite{caoFusariumOxysporumAvr2Six52018, thommaPAMPsEffectorsBlurred2011,
+  loprestiHowFilamentousPlant2017}.
 
-From the behaviour of DMR6 we further give evidence that both LYM2 and CERK1 are
-not necessary for a transcriptional response to chitin, albeit minimal. This
-suffices to suggest that at least one other protein is capable of perceiving
-chitin in some form.
+Through the study of transcriptome changes induced by knocking out two key
+receptor-like proteins, LYM2 and CERK1, we have provided evidence towards their
+unique involvement in plasmodesmata. Previously it was thought that that CERK1
+was essential for chitin perception in plants \cite{miyaCERK1LysMReceptor2007},
+though symplastic connectivity experiments revealed that this was not true as
+\textit{cerk1-2} had a plasmodesmal response to chitin \cite{Faulkner2013}.
+Our data augments this understanding by showing that CERK1 is not required for a
+transcriptional response to chitin, and that LYM2 is responsible for a cascade
+of defence responses that culminate in plasmodesmatal closure. Thus this
+underpins the importance of LYM2 in symplastic response during defence with a
+particular influence on the temporal patterning of the response. 
 
-With such an interesting change observed in the \textit{lym2-1} genotype, a more
-refined time-course could uncover the exact point of change, as well as what
-particular genes (or lack of) lead to the decline in transcriptomic activity
-
-To consolidate these data with their role in symplastic defence a
-spatial-temporal phenotypic data set on plasmodesmata state during infection
-would be required. Many questions on these data could be resolved if the
-behaviour of plasmodesmata could be correlated with the DEGs given here. 
+The finding that \textit{cerk1-2} gives a down-regulation of  Protein DOWNY
+MILDEW RESISTANCE 6 (DMR6) in response to chitin was surprising. This protein,
+which is negatively regulates defence \cite{zeilmakerDOWNYMILDEWRESISTANT2015},
+has given a useful insight into the role of CERK1 and LYM2 by showing that a
+response exists outside the scope of these receptor-like proteins, we may
+conclude that at least one other pathway for chitin detection exits. Though,
+its full function and effect on pathogen defence is yet to be observed.
 
 
 
@@ -358,7 +363,7 @@ Alignment was carried out using a combination of \textit{samtools} and
 \textit{hisat2} \cite{liSequenceAlignmentMap2009}. Finally, \textit{htseq-count}
 was used to prepare sequence counts from trimmed and aligned RNA-seq data
 \cite{kimHISATFastSpliced2015}. Preparation of count data used the method
-described by \citet{loveModeratedEstimationFold2014a} and normalised transcript
+described by \citet{loveModeratedEstimationFold2014} and normalised transcript
 counts were created using \textit{DESEQ2}
 \cite{piperCountNormalizationDESeq22017}.
 
