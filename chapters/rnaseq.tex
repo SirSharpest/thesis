@@ -10,22 +10,23 @@ It is well established that plasmodesmata react and respond to microbe presence
 through the recognition of highly-conserved microbe associated molecular
 patterns (MAMPs) by pattern recognition receptors (PRRs)
 \cite{zipfelPlantPatternrecognitionReceptors2014a,
-  chevalPlasmodesmalRegulationPlant2018}. One specific interaction of a protein
-and a ligand which has been identified is between fungal chitin and CHITIN
-ELCITOR RECEPTOR KINASE 1 (CERK1) \cite{miyaCERK1LysMReceptor2007}, where it has
-been reported that CERK1 acts a receptor specific to chitin signalling (figure
-\ref{fig:receptors}). Interestingly, it has been show that CERK1 is not a
-requirement for plasmodesmatal closure in response to chitin and that another
-protein, LYSIN MOTIF DOMAIN-CONTAINING GLYCOSYLPHOSPHATIDYLINOSITOL-ANCHORED
-PROTEIN 2 (LYM2), is essential for a plasmodesmata; defence response to chitin
-\cite{Faulkner2013} (figure: \ref{fig:receptors}).
+  chevalPlasmodesmalRegulationPlant2018}. For fungal pathogens the receptor-like
+kinase CHITIN ELCITOR RECEPTOR KINASE 1 (CERK1) perceives apoplastic chitin and
+triggers defence \cite{miyaCERK1LysMReceptor2007}.
+However, it has been show that CERK1 is not a requirement for plasmodesmatal
+closure in response to chitin. Whereas LYSIN MOTIF
+DOMAIN-CONTAINING GLYCOSYLPHOSPHATIDYLINOSITOL-ANCHORED PROTEIN 2 (LYM2), a
+plasmodesmata localised receptor-like protein, is
+essential for a plasmodesmatal response to chitin \cite{Faulkner2013}
+(figure: \ref{fig:receptors}).
 
-As eluded to by \citet{Faulkner2013} the there
-exists at least two (seemingly) independent signalling pathways involved in
-chitin-triggered defence response in plants. Here, we present the outcome and
-analysis of data created in collaboration with the Faulkner group which has
-provided new insight into the behaviour of the LYM2 and CERK1 pathways in
-Arabidopsis.
+
+As hypothesised by \citet{Faulkner2013} there seems to exist at least two
+independent signalling pathways involved in chitin-triggered defence response in
+plants. Here, we present a transcriptomic analysis on the role of LYM2 and CERK1
+under fungal chitin application to better understand plasmodesmatal defence. The
+presented data is done in collaboration with the Faulkner which performed the
+experiments.
 
 
 \begin{figure}[ht]
@@ -38,111 +39,154 @@ Arabidopsis.
     plasmodesmata localised protein}
 \end{figure}
 
-\section{Materials and methods}
+\section{Results}
 
-\subsection{Plant materials}
-An RNA-seq assay was performed on three genotypes of Arabidopsis Thaliana to
-test for transcripts unique to chitin perception. Col-0 used as a control,
-as well as \textit{lym2-1} and \textit{cerk2-1} which are knock-out mutants of
-their respective chitin perception proteins. 
+\subsection{LYM2 is not required for a transcriptional response to chitin}
 
-All three of these genotypes were grown \textit{in vitro}, as seedlings they
-were introduced to one of two treatments. Either chitin or water solutions were
-added and mixed into their suspension. Samples were taken at 30 minutes post
-treatment and at 6 hours. Whole seedlings were taken and pooled and sequenced
-together for robustness. Three replicates of each genotype, treatment and time
-point were produced.
+As LYM2, rather than CERK1 \cite{miyaCERK1LysMReceptor2007}, was previously
+identified as being the essential protein for controlling symplastic
+connectivity in response to chitin \cite{Faulkner2013} we hypothesised that it would also be vital
+in regulating transcriptional responses to chitin. Therefore we used knock-out
+mutants of LYM2 and CERK1 in the form of \textit{lym2-1} and \textit{cerk1-2}
+respectively to ascertain what, if any, transcriptional differences occurred in
+the absence of these receptor-like proteins.
+
+With these mutants we applied either a chitin or water treatment, we then
+performed RNA-seq on samples taken at 30 minutes and 6 hours post-application.
+Initial analysis indicated that at both time-points, a significant
+response to chitin is seen in both Col-0 and \textit{lym2-1} where several
+hundred differentially expressed genes were found in both of these genotypes (figures:
+\ref{subfloat:05hrDEGs} and \ref{subfloat:6hrDEGs})
+
+In comparing the most differentially regulated genes we observe that very
+similar profiles are shared by \textit{lym2-1} and Col-0, with minor differences
+observed, through hierarchical clustering we show that at both time-points
+\textit{lym2-1} and Col-0 are similar in the regulation of their most
+differentially expressed genes (figure: \ref{fig:DEGS}). Thus the absence of
+LYM2 does not impede a plants ability to activate a transcriptional response to chitin.
 
 
-\subsection{Computational methods}
+% Diff section ... 
 
-Data were pre-processed firstly through removing adaptor sequences, with
-\textit{trimmomatic} \cite{bolgerTrimmomaticFlexibleTrimmer2014}. Sanity checks
-were performed using \textit{fastqc} \cite{andrewsBabrahamBioinformaticsFastQC}.
-Alignment was carried out using a combination of \textit{samtools} and
-\textit{hisat2} \cite{liSequenceAlignmentMap2009}. Finally, \textit{htseq-count}
-was used to prepare sequence counts from trimmed and aligned RNA-seq data
-\cite{kimHISATFastSpliced2015}. Preparation of count data used the method
-described by \citet{loveModeratedEstimationFold2014a} and normalised transcript
-counts were created using \textit{DESEQ2}
-\cite{piperCountNormalizationDESeq22017}.
+\subsection{Temporal response to chitin is supported by LYM2}
 
-With these normalised data, we calculated the false discovery rate (FDR) value
-for chitin compared to water treatments of each genotype at each time point. We
-specified that all genes with an FDR$< 0.05$ would be considered significant.
-For further down-stream gene-ontology (GO) analysis we used
-\cite{klopfensteinGOATOOLSPythonLibrary2018}, and further limited genes of
-interest to having a Log2 Fold Change (LFC) of $>2$ to select only genes with a
-high degree of difference from their water treatment.
+To understand how a significant change to the transcriptome could occur in
+\textit{lym2-1} whilst previous studies have shown lack of defence phenotype in
+the same mutant, we compared temporal data of \textit{lym2-1} and Col-0 to find
+an explanation.
 
-\section{Analysis of chitin response after 30 minutes}
-\label{sec:seqresults}
+When quantifying the number of DEGs between Col-0 and \textit{lym2-1} a much
+higher level of mis-regulation is seen in \textit{lym2-1} at 30 minutes with
+$\approx70\%$ more genes being differentially regulated than in wild-type (figure: \ref{subfloat:05hrDEGs}).
+However, this effect is reversed with time, after 6 hours mis-regulation in
+\textit{lym2-1} is seen to decrease by $\approx74\%$ whereas a reduction of $\approx52\%$ is
+found in Col-0. This shift of regulation indicates that LYM2 impacts a plant's
+ability to formulate a persistent defence response to chitin. 
 
-\subsection{Col-0 and \textit{lym2-1} respond strongly to chitin}
-
-Initial analysis indicates that at our earliest time point, 30 minutes post
-treatment, a significant response to chitin is seen in both Col-0 and
-\textit{lym2-1}. Unsurprisingly, \textit{cerk2-1} produced only 3 differentially
-expressed genes (DEGs) whereas Col-0 and \textit{lym2-1} show to have 3664 and
-5196 respectively (figure: \ref{fig:05hrDEGs}). A surprising result is seen in that the
-\textit{lym2-1} mutant had a much higher level of mis-regulation following
-chitin treatment of $\approx70\%$ more genes classified as significantly different
-than the control.
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.8\columnwidth]{figures/vennTreatmentschitin.png}
-  \caption[Venn diagram of differential genes 30 minutes post-chitin treatment]{\label{fig:05hrDEGs} Venn diagram of differential genes for Col-0,
-    \textit{cerk2-1} and \textit{lym2-1} 30 minutes after exposed to chitin}
+\begin{figure}[!ht]
+  \centering  
+  \subfloat[Venn diagram of differential genes 30 minutes post-chitin
+  treatment \label{subfloat:05hrDEGs}]{\includegraphics[width=0.9\columnwidth]{figures/vennTreatmentschitin.png}
+  }
+  \\
+  \subfloat[Venn diagram of differential genes 6 hours post-chitin treatment \label{subfloat:6hrDEGs}] {%
+    \includegraphics[width=0.9\columnwidth]{figures/vennTreatmentschitin6.png}}
+  \caption[Number of differential genes found in chitin treated plants]{Shown
+    left are genes down-regulated, right genes that are up-regulated in response
+    to chitin. Colours give genotypes in study.}
+  \label{fig:DEGsVenn}
 \end{figure}
 
-\subsection{\textit{cerk2-1} is required for a substantial transcriptional response to chitin}
+To further evaluate LYM2's temporal expression and to look for changes in degree
+of gene expressions we looked at the number of genes with high-levels of
+differential regulation for Col-0 and \textit{lym2-1} at both time-points. In doing this
+analysis we note large reduction in genes with a high-value of LFC for both
+genotypes but that \textit{lym2-1} gives the most drastic change in expression
+profile (figure: \ref{fig:tmpHist})
 
-Comparing the most DEGs for each genotype reveals that a similar expression
-profile is seen in up-regulated genes for both Col-0 and \textit{lym2-1} , while
-\textit{cerk2-1} doesn't show any genes that would be classified as having a
-substantially different expression compared with the water control (DEGs with
-greater than 2 LFC, three genes found in \textit{cerk2-1} have a small degree of
-regulation) (figure: \ref{fig:DEG5}). In genes down-regulated at 30
-minutes post-treatment, \textit{lym2-1} and Col-0 have a slight difference.
-Overall at this time point \textit{lym2-1} shows a much higher degree of
-mis-regulation (figure: \ref{fig:05hrDEGs}). This behaviour may suggest that
-missing a key piece of plasmodesmata signalling leads to the inability to
-correctly contain and regulate gene expression.
 
 \begin{figure}[!ht]
   \centering
-  \subfloat[Most up-regulated genes at 30 minutes post-treatment of chitin.
-  \label{subfig-2:deg5}]{%
-    \includegraphics[width=1\columnwidth]{./figures/chitin_water_05hr_up.png}
+  \subfloat[30 minutes post chitin application\label{subfig-1:tmpHist}]{%
+    \includegraphics[width=0.4\columnwidth]{./figures/hist05hr.png}
   }
-  \\
-  \subfloat[Most down-regulated genes at 30 minutes post-treatment of chitin\label{subfig-1:deg5}]{%
-    \includegraphics[width=1\columnwidth]{./figures/chitin_water_05hr_down.png}
+  \subfloat[6 hours post chitin application\label{subfig-2:tmpHist}]{%
+    \includegraphics[width=0.4\columnwidth]{./figures/hist_6hr.png}
   }
-  \caption[Most differential genes at 30 minutes post-chitin treatment]{5 most up and down regulated genes at 30 minutes post chitin
-    treatment for each genotype. Columns show each genotype tested, colour intensity represents LFC}
-  \label{fig:DEG5}
+  \caption[Temporal histograms of RNAseq data]{Temporal histograms. In red Col-0 DEGs are shown, \textit{lym2-1} in
+    blue. Positive values show up-regulation and negative down in response to
+    chitin treatments}
+  \label{fig:tmpHist}
 \end{figure}
 
 
-\subsection{\textit{cerk1-2} produces a minor response to chitin}
+\subsection{CERK1 is not required for chitin perception}
 
-Of the several thousand DEGs found in this study only three have been shown to
-affect \textit{cerk2-1}. AT5G24530 (DMR6) is shown to be uniquely down-regulated when
-presented with chitin. Curiously, this gene has previously been described as
-enhancing susceptibility to downy mildew \cite{DOWNYMILDEWRESISTANT}, these data
-could suggest that a secondary fallback mechanism is activated only when CERK1 is
-not present (figure: \ref{subfig-1:cerk}).
+CERK1 has been canonically described as an essential protein in chitin
+perception \cite{miyaCERK1LysMReceptor2007,
+  shinyaFunctionalCharacterizationCEBiP2012} and its relationship with
+symplastic defence has been a point of interest since it was shown to not be
+required for plasmodesmatal closure in response to chitin. It would therefore be
+reasonable conjecture to expect that \textit{cerk1-2} produces no DEGs between a
+chitin or a water treatment. 
+
+Surprisingly, in our experiments \textit{cerk2-1} produced 3 DEGs after 30
+minutes, whereas Col-0 and \textit{lym2-1} show to have 3664 and 5196
+respectively (figure: \ref{subfloat:05hrDEGs}). Whilst the effect seen in
+\textit{cerk1-2} is greatly subdued, our data indicates that CERK1 is essential
+in enabling many processes but, some transcriptional response to chitin is still
+possible. Furthermore, as our 6 hour post-treatment data revealed no differences
+in \textit{cerk1-2} we propose that CERK1 is not required for chitin perception
+and that another unknown protein is able to perceive exogenous chitin and enable
+plasmodesmata closure. 
+
+% With this our data also maintains and strengthens the established
+% conjecture that CERK1 and LYM2 are independent chitin response signalling pathways
+% \cite{Faulkner2013, miyaCERK1LysMReceptor2007,
+%   narusakaPresenceLYM2Dependent2013}.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\columnwidth]{figures/allDEGs.png}
+  \caption[Most differentially regulated  genes in response to
+  chitin]{\label{fig:DEGS} Most differentially regulated  genes in response to
+    chitin. 10 genes from each sample were selected, 5 most up-regulated and 5
+    most down-regulated. Values were then found selected from all samples for
+    comparison. Colour indicates log2 fold change. Columns represent different
+    genotype's at different time-points. Hierarchical clustering is used column
+    and row wise to group similarly patterned values}
+\end{figure}
+
+
+\subsection{Down-regulation of DMR6 causes plasmodesmata closure}
+
+With the unexpected discovery of differential genes in \textit{cerk1-2}'s
+response to chitin, we investigated the profile of these genes to verify their
+differences across genotypes and to check basal differences in response to
+water. We did this by comparing normalised count data for transcripts of the three
+differential \textit{cerk1-2} genes and reviewing their function in order to
+gain insight to how they are active in spite of CERK1's absence.
+
+The sole down-regulated gene exclusively found in \textit{cerk1-2}, AT5G24530
+(DMR6) has previously been described as enhancing susceptibility to downy mildew
+\cite{DOWNYMILDEWRESISTANT}, these data could suggest that a secondary fallback
+mechanism is activated only when CERK1 is not present (figure:
+\ref{subfig-1:cerk}).
 
 Two other genes that appear to be differentially regulated in \textit{cerk2-1}
 AT5G59320 (LTP3) and AT3G60690 (SAUR59) may be worth further consideration. LTP3
 has been shown to be involved with abscisic acid, an important signalling
-molecule in abiotic stress \cite{vishwakarmaAbscisicAcidSignaling2017} and
+molecule in abiotic/biotic stress \cite{vishwakarmaAbscisicAcidSignaling2017} and
 SAUR59 is indicated to be a highly mobile transcript
 \cite{thiemeEndogenousArabidopsisMessenger2015} and thus potentially involved in
 cell-cell communication of stress (Figures \ref{subfig-2:cerk} and
-\ref{subfig-3:cerk}).
+\ref{subfig-3:cerk}). Though, given that similar trends are seen in
+\textit{lym2-1} and Col-0 in terms of regulation-direction compared to water
+treatments their interest is devalued.
+
+Given the nature of DMR6, its behaviour in both Col-0 and \textit{lym2-1}, our
+current data would allow for the hypothesis that DMR6 is able to trigger
+plasmodesmata closure, independently from other methods available to Col-0.
 
 %  This indicates that chitin perception is not wholly dependant
 % on CERK1, as previously thought.  
@@ -172,34 +216,29 @@ cell-cell communication of stress (Figures \ref{subfig-2:cerk} and
   \label{fig:cerk}
 \end{figure}
 
-As these data indicate that the effect of knocking-out CERK1 is highly specific,
-we hypothesise that CERK1 acts at a high-level and that its absence
-inhibits many downstream processes, such as those we see in Col-0 and \textit{lym2-1}.
-Our data also maintain and strengthen the established theory that CERK1 and LYM2 are
-independent signalling pathways \cite{Faulkner2013, miyaCERK1LysMReceptor2007,
-  narusakaPresenceLYM2Dependent2013}.
 
 
 
-\subsection{Gene ontology analysis shows Col-0 and \textit{lym2-1} have similar
-  disruption patterns}
+\subsection{LYM2 has a highly specific role in defence regulation}
 
-To better ascertain the transcriptional changes observed in \textit{lym2-1} we
+To better ascertain what effect the transcriptional changes observed in
+\textit{lym2-1} were having, if they were not leading to plasmodesmatal closure we
 performed Gene ontology (GO) term analysis on the DEGs found. Whilst having
-hundreds of differential genes both Col-0 and \textit{lym2-1} have some curious
+hundreds of differential genes both Col-0 and \textit{lym2-1} have a lot of
 similarities. Firstly, they show very few GO-terms being enriched/purified.
-Secondly they show a great deal of overlap.
+Secondly they show a great deal of overlap of those that have been found
+(figure: \ref{fig:05hrGO}).
 
 This analysis indicates that a large part of the transcriptomic disruption
 caused by chitin results in seemingly disconnected processes (thus the low
-number of significant GO terms). The terms which do create interest are
+number of significant GO terms to number of DEGs). The terms which do create interest are
 ``response to chitin'' which indicates that Col-0 has a sub-set of DEGs that are
 down-regulated exclusively (figure \ref{fig:05hrGO}), and ``defense response to bacterium''
 which conversely shows an exclusive set of \textit{lym2-1} genes that are
-down-regulated (supplemental
+down-regulated in response to chitin (supplemental
 tables \ref{cha:suppltbl}).
 
-However, closer investigations reveals that expression profiles of these groups
+However, closer inspection of data reveals that expression profiles of these groups
 are similar and that repeated experiments could give contradictory results
 (supplemental figures \ref{fig:respchitin} and \ref{fig:defbacterium}).
 
@@ -215,112 +254,17 @@ are similar and that repeated experiments could give contradictory results
 \end{figure}
 
 
-\clearpage
+\subsection{Analysis of temporally different genes}
 
-\section{Analysis of chitin response after 6 hours}
+As \textit{lym2-1} displayed a sharp decline in number of DEGs over time, whilst Col-0 had
+a more gentle response we sought to find genes at 30 minutes
+post-treatment that may control down-stream expression. To do this we devised a
+method of selecting genes based on opposing temporal expression. We firstly gave
+all DEGs a two point coordinate, one for LFC at each time-point, then reduced
+our genes of interest to those with opposing directions. This gave genes which
+were either up-regulated at 30 minutes and down-regulated at 6 hours or the
+reverse (figure: \ref{fig:diverg}).
 
-\subsection{Col-0 sustains high number of DEGs 6 hours post chitin application}
-\label{sec:col-0-sustains}
-
-As previously shown the number of DEGs found at 30 minutes post chitin treatment
-was high for both Col-0 and \textit{lym2-1}, with the latter showing higher
-numbers of differential genes. After 6 hours we see that this reverses (figure
-\ref{fig:6hrDEGs}). Our results show that whilst diminished, Col-0 has a large
-number of genes (over 1500) differentially regulated at this time-point. Whereas
-\textit{lym2-1} has shown its response drastically drops off compared with its
-previous, 30 minute time-point and here gives just 366 DEGs. 
-
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.8\columnwidth]{figures/vennTreatmentschitin6.png}
-  \caption{\label{fig:6hrDEGs} Differentially expressed genes Venn diagram at 30
-  minutes post-chitin treatment}
-\end{figure}
-
-Unsurprisingly, \textit{cerk1-2} displays an almost complete disregard for
-chitin treatments 6 hours after exposure (figure: \ref{fig:DEG6}). Though this
-gives further evidence that CERK1 allows for organisation of downstream
-processes. 
-
-
-\begin{figure}[!ht]
-  \centering
-  \subfloat[5 most up-regulated genes for each genotype \label{subfig-1:deg6}]{%
-    \includegraphics[width=1\columnwidth]{./figures/chitin_water_6hr_up.png}
-  }
-  \\
-  \subfloat[5 most down-regulated genes for each genotype\label{subfig-2:deg6}]{%
-    \includegraphics[width=1\columnwidth]{./figures/chitin_water_6hr_down.png}
-  }
-  \caption{Most up/down regulated genes for each genotype 6 hours post chitin application}
-  \label{fig:DEG6}
-\end{figure}
-
-
-
-\subsection{Response to chitin by CERK1 and LYM2 occurs early in the defence
-  process}
-\label{sec:resp-chit-cerk1}
-
-Given that plasmodesmata response to chitin can occur from 30 minutes
-post-application \cite{chevalChitinPerceptionPlasmodesmata2019} and that
-systemic response to fungal pathogens occurs 48-72 hours after initial
-infections \cite{gaoSignalRegulatorsSystemic2015}, we suggest that CERK1 and
-LYM2 may manage and enable early processes that go on to produce larger scale
-defence responses and thus are critical to enabling systemic acquired
-resistance. Our data supports this suggestion, as we see a strong drop-off of
-DEGs for \textit{cerk1-2} and \textit{lym2-1} between 30 minutes and 6 hours
-after chitin application (figure: \ref{fig:tmpHist})
-
-
-\begin{figure}[!ht]
-  \centering
-  \subfloat[30 minutes post chitin application\label{subfig-1:tmpHist}]{%
-    \includegraphics[width=0.6\columnwidth]{./figures/hist05hr.png}
-  }
-  \\
-  \subfloat[6 hours post chitin application\label{subfig-2:tmpHist}]{%
-    \includegraphics[width=0.6\columnwidth]{./figures/hist_6hr.png}
-  }
-  \caption[Temporal histograms of RNAseq data]{Temporal histograms. In red Col-0 DEGs are shown, \textit{lym2-1} in
-    blue. Positive values show up-regulation and negative down in response to
-    chitin treatments}
-  \label{fig:tmpHist}
-\end{figure}
-
-\subsection{Plasmodesmatal closure depends on LYM2}
-\label{sec:plasm-clos-depends}
-
-As previously shown by \citet{Faulkner2013}, LYM2 is required for a
-plasmodesmatal response to chitin and that CERK1 is not entirely necessary. The
-results presented by these transcriptional data would initially cause confusion
-on the \textit{lym2-1} response compared to \textit{cerk1-2}. However, as we
-show that \textit{lym2-1}'s response quickly fades (figure: \ref{fig:tmpHist}),
-we could conclude that LYM2 is not required for chitin perception, but it is
-explicitly required for a plasmodesmatal defence response.
-
-\clearpage
-
-\section{Analysis of temporally different genes}
-\label{sec:tempexpress}
-
-\subsection{Searching for genes with unique temporal regulation}
-\label{sec:col-0-textitlym2}
-
-With many hundreds of genes differentially expressed in both \textit{lym2-1}
-and Col-0 we wanted a method that could extract and find genes which may be of
-special interest. To that end we developed a method for finding genes which had
-opposing behaviours across both of the time-points we sequenced. For example we
-would consider a gene interesting if it was down-regulated at 30 minutes after
-chitin treatment and up-regulated at 6 hours after. To further reduce the number
-of genes that we specified those which had also been differentially regulated
-with a value of 2 or greater log fold change (LFC).
-
-Without applying this method, we found too many individual genes to study
-(figure: \ref{subfig-1:diverg}), though after we found a more manageable amount
-(figure: \ref{subfig-2:diverg}). Here we present two genes of interest, one
-selected using this method from Col-0 and another from \textit{lym2-1}.
 
 \begin{figure}[!ht]
   \centering
@@ -336,15 +280,12 @@ selected using this method from Col-0 and another from \textit{lym2-1}.
   \label{fig:diverg}
 \end{figure}
 
-
-\subsection{CERK1 acts as an amplification for some genes}
-\label{sec:cerk1-acts-as}
-
-For the genes we selected for their unique temporal patterning, we find two
-interesting features. One, they are not documented to be defence related and two
-it appears as \textit{cerk2-1} maintains directional change as Col-0 and
-\textit{lym2-1}. Yet this effect is very subdued and difficult to notice
-(figure: \ref{fig:interestinggenes})
+From this refined selection process we investigated one gene for each group, we
+selected the gene with the largest LFC difference between time-points. Upon
+comparison we found very little difference between Col-0 and \textit{lym2-1}
+expressions, though we note that a certain level of basal differences (those
+seen in water treatment controls) may explain some of these lack of differences
+(figure: \ref{fig:interestinggenes}).
 
 \begin{figure}[!ht]
   \centering
@@ -360,6 +301,74 @@ it appears as \textit{cerk2-1} maintains directional change as Col-0 and
     plants, right plot after chitin application}
   \label{fig:interestinggenes}
 \end{figure}
+
+
+\section{Discussion}
+
+The importance of plasmodesmata in both initial localised responses to pathogens
+\cite{chevalChitinPerceptionPlasmodesmata2019} and in later whole-plant
+responses (systemic acquired resistance (SAR))
+\cite{chevalPlasmodesmalRegulationPlant2018} cannot be understated. It is
+therefore crucial that we understand and dissect the processes that lead to
+these responses. In this study we have been able to elude to behavioural
+dynamics of two key proteins in chitin defence. We have confirmed that, as
+previously thought, CERK1 is not required for chitin perception and that it is
+also not required for a transcriptional response. From this understanding we can
+suggest that Protein DOWNY MILDEW RESISTANCE 6 (DMR6) has an important role in
+the reduction of symplastic connectivity when CERK1 is absent.
+
+From the behaviour of DMR6 we further give evidence that both LYM2 and CERK1 are
+not necessary for a transcriptional response to chitin, albeit minimal. This
+suffices to suggest that at least one other protein is capable of perceiving
+chitin in some form.
+
+With such an interesting change observed in the \textit{lym2-1} genotype, a more
+refined time-course could uncover the exact point of change, as well as what
+particular genes (or lack of) lead to the decline in transcriptomic activity
+
+To consolidate these data with their role in symplastic defence a
+spatial-temporal phenotypic data set on plasmodesmata state during infection
+would be required. Many questions on these data could be resolved if the
+behaviour of plasmodesmata could be correlated with the DEGs given here. 
+
+
+
+\section{Materials and methods}
+
+\subsection{Plant materials}
+An RNA-seq assay was performed on three genotypes of Arabidopsis Thaliana to
+test for transcripts unique to chitin perception. Col-0 used as a control,
+as well as \textit{lym2-1} and \textit{cerk2-1} which are knock-out mutants of
+their respective chitin perception proteins. 
+
+All three of these genotypes were grown on plates for 7 days before transferred
+to liquid media for 7 days. Samples were treated on day 14. Either a chitin or
+water treatment was added and mixed into sample suspension. Samples were taken
+at 30 minutes post treatment and at 6 hours. Whole seedlings were taken, pooled
+in groups of 10 and sequenced together for robustness. Three replicates of each
+genotype, treatment and time point were produced (36 samples in total).
+
+
+\subsection{Computational methods}
+
+Data were pre-processed firstly through removing adaptor sequences, with
+\textit{trimmomatic} \cite{bolgerTrimmomaticFlexibleTrimmer2014}. Sanity checks
+were performed using \textit{fastqc} \cite{andrewsBabrahamBioinformaticsFastQC}.
+Alignment was carried out using a combination of \textit{samtools} and
+\textit{hisat2} \cite{liSequenceAlignmentMap2009}. Finally, \textit{htseq-count}
+was used to prepare sequence counts from trimmed and aligned RNA-seq data
+\cite{kimHISATFastSpliced2015}. Preparation of count data used the method
+described by \citet{loveModeratedEstimationFold2014a} and normalised transcript
+counts were created using \textit{DESEQ2}
+\cite{piperCountNormalizationDESeq22017}.
+
+With these normalised data, we calculated the false discovery rate (FDR) value
+for chitin compared to water treatments of each genotype at each time point. We
+specified that all genes with an FDR$< 0.05$ would be considered significant.
+For further down-stream gene-ontology (GO) analysis we used
+\cite{klopfensteinGOATOOLSPythonLibrary2018}, and further limited genes of
+interest to having a Log2 Fold Change (LFC) of $>2$ to select only genes with a
+high degree of difference from their water treatment.
 
 
 
