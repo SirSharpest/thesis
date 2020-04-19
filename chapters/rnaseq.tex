@@ -22,27 +22,27 @@ demonstrated to be essential for plasmodesmatal closure in response to chitin
 \cite{Faulkner2013}.
 
 
-As hypothesised by \citet{Faulkner2013}, there is evidence that there are at least two
-independent signalling pathways involved in chitin-triggered defence response in
-plants. Here, we present a transcriptomic analysis on the role of LYM2 and CERK1
-under fungal chitin application to better understand plasmodesmatal defence. The
-presented data is done in collaboration with the Faulkner which performed the
-experiments.
+As hypothesised by \citet{Faulkner2013}, evidence suggests that at least two chitin induced signalling pathways exist in plants, one mediated by CERK1 and another by LYM2. Further investigation of these pathways is required to fully understand their roles in pathogen defence coordination. Moreover, it is an open question as to why two receptors would be required for a specific MAMP, particularly when their functions seem to be separate. The continued study of these pathways may lead to uncovering mechanisms which specifically regulate symplastic connectivity and provide information towards defence-related processes which are autonomous from plasmodesmatal state. To that end we have created and analysed a temporal RNA-seq data set consisting of knock-out mutants of these aforementioned receptor-like proteins. 
+
+
+Here we show that LYM2 is not required for a transcriptional response to chitin, however a large number of genes are differentially regulated in the knockout that are not found in Col-0. Interestingly, our data also suggests that CERK1 is required for a large number of processes to become activated during chitin perception, and that this inhibition of processes has a long lasting effect, that even after 6 hours no discernible effect is detected. Finally, we present evidence that a third chitin perception pathway may exist which doesn't involve LYM2 or CERK1.
 
 \section{Results}
 
 \subsection{LYM2 is not required for a transcriptional response to chitin}
-
+ 
 % As LYM2, rather than CERK1 \cite{miyaCERK1LysMReceptor2007}, was previously
 % identified as being the essential protein for controlling symplastic
 % connectivity in response to chitin \cite{Faulkner2013} we hypothesised that it would also be vital
-% in regulating transcriptional responses to chitin. Therefore, we used knock-out
-% mutants of LYM2 and CERK1 in the form of \textit{lym2-1} and \textit{cerk1-2}
-% respectively to ascertain what, if any, transcriptional differences occurred in
-% the absence of these receptor-like proteins.
+% in regulating transcriptional responses to chitin. 
 
-% With these mutants we applied either a chitin or water treatment, we then
-% performed RNA-seq on samples taken at 30 minutes and 6 hours post-application.
+Given the results of previous studies \cite{miyaCERK1LysMReceptor2007,Faulkner2013} we hypothesised that both CERK1 and LYM2 would play unique roles in transcriptional activation of chitin responses. Therefore, we used knock-out mutants of LYM2 and CERK1 in the form of \textit{lym2-1} and \textit{cerk1-2}, respectively, to ascertain what processes are dependent on them.
+
+With these mutants we applied both a chitin and a water treatment. Samples were taken at two time points, 30 minutes and 6 hours. We then created an RNA-seq data set with these samples. From these data we compared within each genotype the difference in gene expression between the water and chitin treatments. Genes were considered differentially expressed if they fell below, the commonly accepted \ref{loveModeratedEstimationFold2014}, 0.05 FDR cutoff.  
+
+
+
+
 % Initial analysis indicated that at both time-points, a significant
 % response to chitin is seen in both Col-0 and \textit{lym2-1} where several
 % hundred differentially expressed genes were found in both of these genotypes (figures:
